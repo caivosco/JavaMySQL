@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class CreateStudentDemo {
+public class PrimaryKeyDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,12 +21,18 @@ public class CreateStudentDemo {
 		try {
 			
 			System.out.println("creating new student object");
-			Student tempStudent = new Student("Luisa", "Vargas", "lvargas@luv2code@abc.com");
+			Student tempStudent1 = new Student("Jose", "Perez", "pepe@luv2code@abc.com");
+			Student tempStudent2 = new Student("Carlos", "Garcia", "charly@luv2code@abc.com");
+			Student tempStudent3 = new Student("Andrea", "Rivas", "andreita@luv2code@abc.com");
+			Student tempStudent4 = new Student("Jenny", "Bonita", "jenny@luv2code@abc.com");
 			
 			session.beginTransaction();
 			
 			System.out.println("saving the student");
-			session.save(tempStudent);
+			session.save(tempStudent1);
+			session.save(tempStudent2);
+			session.save(tempStudent3);
+			session.save(tempStudent4);
 			
 			session.getTransaction().commit();
 			
@@ -36,6 +42,7 @@ public class CreateStudentDemo {
 		finally {
 			factory.close();
 		}
+
 
 	}
 
